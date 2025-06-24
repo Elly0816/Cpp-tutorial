@@ -5,8 +5,9 @@ using namespace std;
 
 int main(int argc, char** argv){
 
-    string name = "Eleazar";
-    cout << "Howdy "<< name << "!" << endl << "This is something else" << endl;
+    string name = "Eleazar", address = "Golf Estate";
+
+    cout << "Hi, this is from " << name << "." << endl << "I live in " << address << endl << "It's great to meet you!";
 
     return 0;
 }
