@@ -2,7 +2,8 @@
     "files.associations": {
         "*.jsx": "javascriptreact",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "iomanip": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
