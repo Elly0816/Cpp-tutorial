@@ -4,7 +4,10 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "iomanip": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "string": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }

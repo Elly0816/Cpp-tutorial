@@ -1,48 +1,54 @@
-/**
- *
- *
- * This file contains a function for the implementation of a guessing game
- */
-#include <ctime>
-#include <cmath>
-#include <iostream>
-#include "utils.hpp"
+// /**
+//  *
+//  *
+//  * This file contains a function for the implementation of a guessing game
+//  */
+
 #include <cstdlib>
+#include <ctime>
+#include <string>
+#include <iostream>
+#include <limits>
+#include "utils.hpp"
 
 using namespace std;
 
 int guessingGame()
 {
-    bool shouldPlay = true;
-
-    srand(time(0));
+    // Generate a random number from 1 to 100
+    srand(time(0)); // Seed for random number generation is current time
     int number = (rand() % 100) + 1;
-    // int number = 25;
-    int guesses = 0;
-    while (shouldPlay)
+
+    int input;
+    // Keep asking the user for input
+    cout << "This is a guessing game\nGuess a number from 1 to 100" << endl;
+    while (true)
     {
-        int input;
-        cout << "Guess a number from 1 to 100: ";
+        // Keep track of how many guesses the user makes
+        static int guesses = 0;
+        cout << "Enter a number: ";
         cin >> input;
+        // Break out of the loop if reading the input fails
         if (cin.fail())
         {
-            cin.clear();                                         // clear the error
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clear the buffer
-            // cout<<"invalid number"<<endl;
-            shouldPlay = false;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Quitting..." << endl;
             break;
         }
         guesses++;
-        if (input == number)
+        if (number == input)
         {
-            cout << "Well done, you guessed " << number << " right in " << guesses << " guesses" << endl;
-            shouldPlay = false;
+            // Congratulate the user and show them how long it took to make the correct guess
+            cout << "\nCongratulations, you've guessed " << number << " in " << guesses << " tries." << endl;
             break;
         }
-        string highOrLow = (input > number) ? "too high" : "too low";
-        cout << "Wrong guess!\nYour guess was " << highOrLow << ".\nTry again" << endl;
+        else
+        {
+            string higherOrLower = (input > number) ? " Too high " : " Too low ";
+            cout << higherOrLower << "\nTry again\n"
+                 << endl;
+        }
     }
-
     return 0;
 }
