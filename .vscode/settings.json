@@ -3,7 +3,8 @@
         "*.jsx": "javascriptreact",
         "iostream": "cpp",
         "ostream": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "limits": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
