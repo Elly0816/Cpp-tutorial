@@ -14,19 +14,19 @@ int getAges(){
     bool shouldContinue = true;
     vector<int> ages;
 
-    cout<<"Keep entering ages, enter a negative number to stop"<<endl;
+    cout<<"Keep entering ages, enter a negative number to stop: ";
     while(shouldContinue){
-        cout<<"Enter age: ";
         int age;
         cin>>age;
         if(cin.fail()){
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout<<"Enter a valid age!"<<endl;
+            cout<<"Enter a valid age!: ";
             continue;
         }
         if(age>=0){
             ages.push_back(age);
+            cout<<"Enter another age. Enter a negative number to stop: ";
         } else{
             shouldContinue = false;
         }
